@@ -1,0 +1,10 @@
+<template>
+  <DocsContainer>
+    <DocsButtonPrimary/>
+    <DocsButtonWithIcon/>
+    <DocsButtonOutlined/>
+    <DocsButtonDisabled/>
+    <DocsButtonRing/>
+    <DocsButtonBlock/>
+  </DocsContainer>
+</template>

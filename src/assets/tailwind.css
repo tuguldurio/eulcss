@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .border-color {
+    @apply border-light-500 dark:border-dark-300;
+  }
+  .text-color {
+    @apply text-dark-800 dark:text-light-200;
+  }
+  .subtitle-color {
+    @apply text-dark-800 dark:text-light-200;
+  }
+}

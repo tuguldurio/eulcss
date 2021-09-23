@@ -1,0 +1,17 @@
+<template>
+  <SimplePreview title="Success" :code="code">
+    <div
+      class="flex items-center max-w-3xl w-full px-6 py-4 mx-2 text-white bg-green-500 rounded-md text-lg"
+    >
+      <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M12 22c-5.52-.006-9.994-4.48-10-10v-.2C2.11 6.305 6.635 1.928 12.13 2c5.497.074 9.904 4.569 9.868 10.065C21.962 17.562 17.497 22 12 22zM7.41 11.59L6 13l4 4l8-8l-1.41-1.42L10 14.17l-2.59-2.58z" fill="currentColor"/></g></svg>
+      <span>Your task has been completed.</span>
+    </div>
+  </SimplePreview>
+</template>
+
+<script setup>
+const code = 
+`<button type="button" class="w-full px-4 py-2 text-white font-medium text-sm bg-blue-500 hover:bg-blue-700 active:bg-blue-800 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150">
+  Block
+</button>`
+</script>

@@ -1,9 +1,13 @@
 <template>
-  <div class="container mx-auto py-4">
-    <div class="py-4 my-2">
-      <h1 class="text-4xl font-medium">{{ $route.name }}</h1>
-    </div>
-
-    <router-view></router-view>
+  <div class="container mx-auto h-full py-8 flex justify-between relative">
+    <Sidebar/>
+    
+    <main class="min-w-0 w-full flex-auto">
+      <router-view></router-view>
+    </main>
   </div>
 </template>
+
+<script setup>
+import Sidebar from '@/layouts/Sidebar.vue'
+</script>

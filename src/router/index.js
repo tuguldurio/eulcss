@@ -8,20 +8,30 @@ const routes = [
     component: Home,
   },
   {
-    path: '/components',
-    name: 'Components',
+    path: '/docs',
+    name: 'Docs',
     component: () => import('../views/Documentation.vue'),
     children: [
       {
-        path: 'buttons',
-        name: 'Buttons',
-        component: () => import('../views/components/Buttons.vue')
+        path: 'button',
+        name: 'Button',
+        component: () => import('../views/docs/components/Button.vue')
       },
       {
-        path: 'alerts',
-        name: 'Alerts',
-        component: () => import('../views/components/Alerts.vue')
+        path: 'alert',
+        name: 'Alert',
+        component: () => import('../views/docs/components/Alert.vue')
       },
+      {
+        path: 'progress',
+        name: 'Progress',
+        component: () => import('../views/docs/components/Progress.vue')
+      },
+      {
+        path: 'navbar',
+        name: 'Navbar',
+        component: () => import('../views/docs/components/Navbar.vue')
+      }
     ],
     beforeEnter: (to, from, next) => {
       if (to.name == 'Components') {

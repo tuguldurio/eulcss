@@ -1,4 +1,4 @@
-import { ref, watch, Ref } from 'vue'
+import { watch, Ref } from 'vue'
 import { useClipboard } from '@vueuse/core'
 
 import hljs from 'highlight.js'
