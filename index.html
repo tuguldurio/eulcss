@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" title="codeDark" href="./node_modules/highlight.js/styles/base16/material-darker.css">
-    <link rel="stylesheet" title="codeLight" href="./node_modules/highlight.js/styles/base16/material-lighter.css">
+    <link rel="stylesheet" title="codeDark" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/base16/material-darker.min.css">
+    <link rel="stylesheet" title="codeLight" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/base16/material-lighter.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EulCSS</title>
-    <script>
-      document.querySelector('link[title=codeLight]').setAttribute('disabled', 'disabled')
-      document.querySelector('link[title=codeDark]').setAttribute('disabled', 'disabled')
-    </script>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+    <script>
+      document.querySelector('link[title=codeLight]').setAttribute('disabled', 'disabled')
+      document.querySelector('link[title=codeDark]').setAttribute('disabled', 'disabled')
+    </script>
   </body>
 </html>
