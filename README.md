@@ -1,6 +1,6 @@
 # EulerCSS
 
-Simple overview of use/purpose.
+Fully free and open source components and templates for Tailwind CSS
 
 ## License
 
