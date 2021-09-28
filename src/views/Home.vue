@@ -3,8 +3,8 @@
     <div class="container mx-auto h-screen-real flex justify-between">
       <div class="w-full h-full absolute inset-0 flex items-center justify-center">
         <div class="max-w-sm text-center">
-          <h1 class="text-4xl font-medium leading-relaxed">EulCSS</h1>
-          <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, repellendus!</p>
+          <h1 class="inline-flex text-4xl font-medium leading-relaxed"><img src="@/assets/icon.svg" class="w-10 mr-2">{{ title }}</h1>
+          <p class="text-lg">Fully free and open source components and templates for Tailwind CSS</p>
 
           <div class="flex items-center justify-center space-x-2 mt-4">
             <router-link :to="{ name: 'Button' }">
@@ -27,6 +27,8 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
+import useInfo from '@/hooks/useInfo'
 
 const router = useRouter()
+const { title } = useInfo()
 </script>
