@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { transform } from 'typescript'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -28,5 +29,15 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
     }),
+    {
+      name: 'html-raw-import',
+      transform (code, id) {
+        if (id.endsWith('.htm')) {
+          const json = JSON.stringify(code)
+
+          return `export default ${json}`
+        }
+      }
+    }
   ],
 })

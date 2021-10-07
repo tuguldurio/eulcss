@@ -8,6 +8,7 @@
 
             <ul>
               <sidebar-list-item name="Alert"/>
+              <sidebar-list-item name="Breadcrumbs"/>
               <sidebar-list-item name="Button"/>
               <sidebar-list-item name="Progress"/>
               <sidebar-list-item name="Navbar"/>

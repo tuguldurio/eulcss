@@ -13,6 +13,11 @@ const routes = [
     component: () => import('../views/Documentation.vue'),
     children: [
       {
+        path: 'breadcrumbs',
+        name: 'Breadcrumbs',
+        component: () => import('../views/docs/components/Breadcrumbs.vue')
+      },
+      {
         path: 'button',
         name: 'Button',
         component: () => import('../views/docs/components/Button.vue')

@@ -9,19 +9,20 @@
     />
 
     <!-- Preview -->
-    <div class="relative flex"
+    <div 
+      class="relative flex"
       :class="[props.bgGray ? 'bg-light-400 dark:bg-dark-400' : 'bg-white dark:bg-dark-600']"
     >
-      <div class="relative flex-1 flex items-center justify-center"
+      <div 
+        v-html="code"
+        class="relative flex-1 flex items-center justify-center"
         :class="{ 'px-4': props.paddingX, 'py-4': props.paddingY }"
-      >
-        <slot></slot>
-      </div>
+      ></div>
     </div>
 
     <!-- Code -->
     <transition name="fade">
-      <pre v-show="showCode" class="overflow-x-auto border-t border-color"><code ref="codeEl" v-html="code" class="language-html"></code></pre>
+      <pre v-show="showCode" class="overflow-x-auto border-t border-color"><code ref="codeEl" v-html="escapedCode" class="language-html"></code></pre>
     </transition>
   </div>
 </template>
@@ -50,12 +51,12 @@ const props = defineProps({
 })
 
 // code
-const code = escapeHtml(props.code)
+const escapedCode = escapeHtml(props.code)
 
 const codeEl = ref()
 const [showCode, toggleCode] = useToggle(false)
 
-const { copy, copied } = useHighlighter(codeEl, code)
+const { copy, copied } = useHighlighter(codeEl, props.code)
 </script>
 
 <style scoped>

@@ -6,20 +6,14 @@ import hljs from 'highlight.js'
 // import html from 'highlight.js/lib/languages/vbscript-html'
 // hljs.registerLanguage('html', html)
 
-function htmlDecode(input: string): string {
-  let e: HTMLDivElement = document.createElement('div')
-  e.innerHTML = input
-  return e.childNodes.length === 0 ? '' : <string> e.childNodes[0].nodeValue
-}
-
 export function useHighlighter(codeEl: Ref, input: string) {
   const { copy, copied } = useClipboard({
     // read: false,
-    source: htmlDecode(input)
+    source: input
   })
   
-  watch(codeEl, (current, _) => {
-    if (current) {
+  watch(codeEl, () => {
+    if (codeEl.value) {
       hljs.highlightElement(codeEl.value)
     }
   })

@@ -1,6 +1,11 @@
+<script setup>
+import Success from '@/docs/Alert/Success.htm'
+import SuccessAlt from '@/docs/Alert/SuccessAlt.htm'
+</script>
+
 <template>
   <DocsContainer>
-    <docs-alert-success/>
-    <docs-alert-alt-success/>
+    <SimplePreview title="Success" :code="Success"/>
+    <SimplePreview title="Success Alternate" :code="SuccessAlt"/>
   </DocsContainer>
 </template>
