@@ -1,6 +1,6 @@
 <script setup>
-import Simple from '@/docs/Navbar/Simple.htm'
-import WithSearch from '@/docs/Navbar/WithSearch.htm'
+import Simple from './Simple.html?raw'
+import WithSearch from './WithSearch.html?raw'
 </script>
 
 <template>

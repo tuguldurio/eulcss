@@ -1,10 +1,10 @@
 <script setup>
-import Primary from '@/docs/Button/Primary.htm'
-import WithIcon from '@/docs/Button/WithIcon.htm'
-import Outlined from '@/docs/Button/Outlined.htm'
-import Disabled from '@/docs/Button/Disabled.htm'
-import Ring from '@/docs/Button/Ring.htm'
-import FullWidth from '@/docs/Button/FullWidth.htm'
+import Primary from '@/docs/Button/Primary.html?raw'
+import WithIcon from '@/docs/Button/WithIcon.html?raw'
+import Outlined from '@/docs/Button/Outlined.html?raw'
+import Disabled from '@/docs/Button/Disabled.html?raw'
+import Ring from '@/docs/Button/Ring.html?raw'
+import FullWidth from '@/docs/Button/FullWidth.html?raw'
 </script>
 
 <template>

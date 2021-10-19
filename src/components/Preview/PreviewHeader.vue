@@ -30,11 +30,11 @@
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
-  title: String,
-  copied: Boolean
-})
+<script setup lang="ts">
+const props = defineProps<{
+  title: string
+  copied: boolean
+}>()
 
 const emits = defineEmits(['toggleCode', 'copy'])
 </script>

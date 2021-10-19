@@ -4,11 +4,14 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Circle: typeof import('./src/docs/Progress/Circle.vue')['default']
     DocsContainer: typeof import('./src/components/DocsContainer.vue')['default']
     DocsListItem: typeof import('./src/components/DocsListItem.vue')['default']
+    DocsListItemA: typeof import('./src/components/DocsListItemA.vue')['default']
     Footer: typeof import('./src/layouts/Footer.vue')['default']
     Navbar: typeof import('./src/layouts/Navbar.vue')['default']
     PreviewHeader: typeof import('./src/components/Preview/PreviewHeader.vue')['default']
+    Progress: typeof import('./src/docs/Progress/index.vue')['default']
     Sidebar: typeof import('./src/layouts/Sidebar.vue')['default']
     SidebarListItem: typeof import('./src/components/Sidebar/SidebarListItem.vue')['default']
     SimplePreview: typeof import('./src/components/Preview/SimplePreview.vue')['default']

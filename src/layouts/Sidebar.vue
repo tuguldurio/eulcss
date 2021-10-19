@@ -12,6 +12,7 @@
               <sidebar-list-item name="Button"/>
               <sidebar-list-item name="Progress"/>
               <sidebar-list-item name="Navbar"/>
+              <sidebar-list-item name="Pagination"/>
             </ul>
           </li>
         </ul>
@@ -19,9 +20,6 @@
     </div>
   </aside>
 </template>
-
-<script setup>
-</script>
 
 <style scoped>
 ::-webkit-scrollbar {

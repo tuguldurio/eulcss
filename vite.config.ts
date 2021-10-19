@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import fs from 'fs'
 import path from 'path'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
@@ -19,7 +20,7 @@ export default defineConfig({
   plugins: [
     vue(),
     Components({
-      dirs: ['src/components', 'src/docs', 'src/layouts'],
+      dirs: ['src/components', 'src/layouts'],
       extensions: ['vue'],
       deep: true,
       resolvers: [
@@ -28,16 +29,6 @@ export default defineConfig({
       dts: true,
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
-    }),
-    {
-      name: 'html-raw-import',
-      transform (code, id) {
-        if (id.endsWith('.htm')) {
-          const json = JSON.stringify(code)
-
-          return `export default ${json}`
-        }
-      }
-    }
+    })
   ],
 })

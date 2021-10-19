@@ -1,6 +1,6 @@
 <script setup>
-import Success from '@/docs/Alert/Success.htm'
-import SuccessAlt from '@/docs/Alert/SuccessAlt.htm'
+import Success from '@/docs/Alert/Success.html?raw'
+import SuccessAlt from '@/docs/Alert/SuccessAlt.html?raw'
 </script>
 
 <template>

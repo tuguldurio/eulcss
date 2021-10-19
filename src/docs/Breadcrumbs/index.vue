@@ -1,6 +1,6 @@
 <script setup>
-import Simple from '@/docs/Breadcrumbs/Simple.htm'
-import FullWidth from '@/docs/Breadcrumbs/FullWidth.htm'
+import Simple from '@/docs/Breadcrumbs/Simple.html?raw'
+import FullWidth from '@/docs/Breadcrumbs/FullWidth.html?raw'
 </script>
 
 <template>

@@ -9,8 +9,8 @@
   </li>
 </template>
 
-<script setup>
-defineProps({
-  name: String
-})
+<script setup lang="ts">
+defineProps<{
+  name: string
+}>()
 </script>

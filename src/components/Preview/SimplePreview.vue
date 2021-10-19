@@ -27,27 +27,24 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { useToggle } from '@vueuse/core'
 import { useHighlighter } from '@/hooks/useHighlighter'
 import { escapeHtml } from '@/utils'
 
-const props = defineProps({
-  title: String,
-  code: String,
-  paddingX: {
-    type: Boolean,
-    default: true
-  },
-  paddingY: {
-    type: Boolean,
-    default: true
-  },
-  bgGray: {
-    type: Boolean,
-    default: false
-  }
+interface Props {
+  title: string
+  code: string,
+  paddingX?: boolean,
+  paddingY?: boolean,
+  bgGray?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  paddingX: true,
+  paddingY: true,
+  bgGray: false
 })
 
 // code

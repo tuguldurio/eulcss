@@ -15,30 +15,35 @@ const routes = [
       {
         path: 'breadcrumbs',
         name: 'Breadcrumbs',
-        component: () => import('../views/docs/components/Breadcrumbs.vue')
+        component: () => import('../docs/Breadcrumbs/index.vue')
       },
       {
         path: 'button',
         name: 'Button',
-        component: () => import('../views/docs/components/Button.vue')
+        component: () => import('../docs/Button/index.vue')
       },
       {
         path: 'alert',
         name: 'Alert',
-        component: () => import('../views/docs/components/Alert.vue')
+        component: () => import('../docs/Alert/index.vue')
       },
       {
         path: 'progress',
         name: 'Progress',
-        component: () => import('../views/docs/components/Progress.vue')
+        component: () => import('../docs/Progress/index.vue')
       },
       {
         path: 'navbar',
         name: 'Navbar',
-        component: () => import('../views/docs/components/Navbar.vue')
+        component: () => import('../docs/Navbar/index.vue')
+      },
+      {
+        path: 'pagination',
+        name: 'Pagination',
+        component: () => import('../docs/Pagination/index.vue')
       }
     ],
-    beforeEnter: (to, from, next) => {
+    beforeEnter: (to: any, from: any, next: any) => {
       if (to.name == 'Components') {
         next('/')
       }
@@ -50,7 +55,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes,
 })
 
