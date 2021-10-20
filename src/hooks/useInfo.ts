@@ -1,7 +1,8 @@
+import pkg from '~/package.json'
+
 export default function () {
-  const title = 'EulerCSS'
-  
   return {
-    title
+    title: pkg.title,
+    version: pkg.version
   }
 }

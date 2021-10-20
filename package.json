@@ -1,5 +1,6 @@
 {
   "name": "eulercss",
+  "title": "EulerCSS",
   "version": "0.2.1",
   "license": "MIT",
   "scripts": {
