@@ -1,3 +1,12 @@
+<script setup lang="ts">
+const props = defineProps<{
+  title: string
+  copied: boolean
+}>()
+
+const emits = defineEmits(['toggleCode', 'copy'])
+</script>
+
 <template>
   <div class="flex flex-col sm:flex-row justify-between items-center py-1 px-3 bg-white dark:bg-dark-600 border-b border-color">
     <div class="flex space-x-1 items-center">
@@ -29,15 +38,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const props = defineProps<{
-  title: string
-  copied: boolean
-}>()
-
-const emits = defineEmits(['toggleCode', 'copy'])
-</script>
 
 <style scoped>
 svg {

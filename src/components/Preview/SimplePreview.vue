@@ -1,32 +1,3 @@
-<template>
-  <div class="w-full border border-color rounded overflow-hidden">
-    <!-- Header -->
-    <preview-header
-      :title="props.title"
-      @toggleCode="toggleCode"
-      @copy="copy"
-      :copied="copied"
-    />
-
-    <!-- Preview -->
-    <div 
-      class="relative flex"
-      :class="[props.bgGray ? 'bg-light-400 dark:bg-dark-400' : 'bg-white dark:bg-dark-600']"
-    >
-      <div 
-        v-html="code"
-        class="relative flex-1 flex items-center justify-center"
-        :class="{ 'px-4': props.paddingX, 'py-4': props.paddingY }"
-      ></div>
-    </div>
-
-    <!-- Code -->
-    <transition name="fade">
-      <pre v-show="showCode" class="overflow-x-auto border-t border-color"><code ref="codeEl" v-html="escapedCode" class="language-html"></code></pre>
-    </transition>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useToggle } from '@vueuse/core'
@@ -55,6 +26,35 @@ const [showCode, toggleCode] = useToggle(false)
 
 const { copy, copied } = useHighlighter(codeEl, props.code)
 </script>
+
+<template>
+  <div class="w-full border border-color rounded overflow-hidden">
+    <!-- Header -->
+    <preview-header
+      :title="props.title"
+      @toggleCode="toggleCode"
+      @copy="copy"
+      :copied="copied"
+    />
+
+    <!-- Preview -->
+    <div 
+      class="relative flex"
+      :class="[props.bgGray ? 'bg-light-400 dark:bg-dark-400' : 'bg-white dark:bg-dark-600']"
+    >
+      <div 
+        v-html="code"
+        class="relative flex-1 flex items-center justify-center"
+        :class="{ 'px-4': props.paddingX, 'py-4': props.paddingY }"
+      ></div>
+    </div>
+
+    <!-- Code -->
+    <transition name="fade">
+      <pre v-show="showCode" class="overflow-x-auto border-t border-color"><code ref="codeEl" v-html="escapedCode" class="language-html"></code></pre>
+    </transition>
+  </div>
+</template>
 
 <style scoped>
 ::-webkit-scrollbar {
