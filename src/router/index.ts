@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw, NavigationGuard } from 'vue-router'
 import Home from '../views/Home.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -43,7 +43,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../docs/Pagination/index.vue')
       }
     ],
-    beforeEnter: (to: any, from: any, next: any) => {
+    beforeEnter: (to, from, next) => {
       if (to.name == 'Components') {
         next('/')
       }
