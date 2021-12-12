@@ -13,6 +13,7 @@ declare module 'vue' {
     PreviewHeader: typeof import('./src/components/Preview/PreviewHeader.vue')['default']
     Progress: typeof import('./src/docs/Progress/index.vue')['default']
     Sidebar: typeof import('./src/layouts/Sidebar.vue')['default']
+    SidebarList: typeof import('./src/components/Sidebar/SidebarList.vue')['default']
     SidebarListItem: typeof import('./src/components/Sidebar/SidebarListItem.vue')['default']
     SimplePreview: typeof import('./src/components/Preview/SimplePreview.vue')['default']
   }

@@ -1,6 +1,6 @@
-<script setup>
-import Success from '@/docs/Alert/Success.html?raw'
-import SuccessAlt from '@/docs/Alert/SuccessAlt.html?raw'
+<script setup lang="ts">
+import Success from '@/eulercss/docs/Alert/Success.html?raw'
+import SuccessAlt from '@/eulercss/docs/Alert/SuccessAlt.html?raw'
 </script>
 
 <template>

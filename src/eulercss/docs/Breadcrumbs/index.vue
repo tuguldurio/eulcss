@@ -1,6 +1,6 @@
-<script setup>
-import Simple from '@/docs/Breadcrumbs/Simple.html?raw'
-import FullWidth from '@/docs/Breadcrumbs/FullWidth.html?raw'
+<script setup lang="ts">
+import Simple from '@/eulercss/docs/Breadcrumbs/Simple.html?raw'
+import FullWidth from '@/eulercss/docs/Breadcrumbs/FullWidth.html?raw'
 </script>
 
 <template>

@@ -1,7 +1,7 @@
-<script setup>
-import Simple from './Simple.html?raw'
-import WithLabel from './WithLabel.html?raw'
-import Circle from './Circle.html?raw'
+<script setup lang="ts">
+import Simple from '@/eulercss/docs/Progress/Simple.html?raw'
+import WithLabel from '@/eulercss/docs/Progress/WithLabel.html?raw'
+import Circle from '@/eulercss/docs/Progress/Circle.html?raw'
 </script>
 
 <template>

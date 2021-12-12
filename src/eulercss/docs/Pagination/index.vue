@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 // import Simple from './Simple.html?raw'
 // import WithLabel from './WithLabel.html?raw'
 // import Circle from './Circle.html?raw'

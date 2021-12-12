@@ -1,20 +1,20 @@
+<script setup lang="ts">
+import { useDocsNames } from '~/src/hooks/Docs'
+const docsNames = useDocsNames()
+</script>
+
 <template>
   <aside class="sticky top-20 w-44 h-auto hidden lg:block mr-4 overflow-x-hidden overflow-y-auto">
     <div class="px-4 w-full">
       <nav class="flex-col content-center justify-between">
         <ul>
-          <li>
-            <h5 class="font-semibold text-lg subtitle-color">Components</h5>
-
-            <ul>
-              <sidebar-list-item name="Alert"/>
-              <sidebar-list-item name="Breadcrumbs"/>
-              <sidebar-list-item name="Button"/>
-              <sidebar-list-item name="Progress"/>
-              <sidebar-list-item name="Navbar"/>
-              <sidebar-list-item name="Pagination"/>
-            </ul>
-          </li>
+          <sidebar-list name="Tools">
+            <sidebar-list-item name="REM Converter"></sidebar-list-item>
+          </sidebar-list>
+          
+          <sidebar-list name="Components">
+            <sidebar-list-item v-for="name in docsNames" :key="name" :name="name"/>
+          </sidebar-list>
         </ul>
       </nav>
     </div>

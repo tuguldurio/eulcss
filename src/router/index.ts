@@ -1,48 +1,35 @@
-import { createRouter, createWebHistory, RouteRecordRaw, NavigationGuard } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw, NavigationGuard, RouterView } from 'vue-router'
 import Home from '../views/Home.vue'
+
+import { useDocsNames } from '~/src/hooks/Docs'
+
+function prefixRoutes(prefix: string, routes: Array<RouteRecordRaw>): Array<RouteRecordRaw> {
+  return routes.map(route => {
+    route.path = prefix + '/' + route.path
+    return route
+  })
+}
+
+function getDocs(): Array<RouteRecordRaw> {
+  const docsNames = useDocsNames()
+
+  return docsNames.map(name => <RouteRecordRaw>{
+    path: name.toLocaleLowerCase(),
+    name: name,
+    component: () => import(`../eulercss/docs/${name}/index.vue`)
+  })
+}
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
+    path: '',
     name: 'Home',
     component: Home,
   },
   {
-    path: '/docs',
-    name: 'Docs',
+    path: '/',
+    name: 'DocsSidebar',
     component: () => import('../views/Documentation.vue'),
-    children: [
-      {
-        path: 'breadcrumbs',
-        name: 'Breadcrumbs',
-        component: () => import('../docs/Breadcrumbs/index.vue')
-      },
-      {
-        path: 'button',
-        name: 'Button',
-        component: () => import('../docs/Button/index.vue')
-      },
-      {
-        path: 'alert',
-        name: 'Alert',
-        component: () => import('../docs/Alert/index.vue')
-      },
-      {
-        path: 'progress',
-        name: 'Progress',
-        component: () => import('../docs/Progress/index.vue')
-      },
-      {
-        path: 'navbar',
-        name: 'Navbar',
-        component: () => import('../docs/Navbar/index.vue')
-      },
-      {
-        path: 'pagination',
-        name: 'Pagination',
-        component: () => import('../docs/Pagination/index.vue')
-      }
-    ],
     beforeEnter: (to, from, next) => {
       if (to.name == 'Components') {
         next('/')
@@ -51,7 +38,17 @@ const routes: Array<RouteRecordRaw> = [
         next()
       }
     },
-  },
+    children: [
+      ...prefixRoutes('/tools', [
+        {
+          path: 'rem_converter',
+          name: 'REM Converter',
+          component: () => import('../eulercss/tools/RemConverter/index.vue')
+        }
+      ]),
+      ...prefixRoutes('/docs', getDocs()),
+    ]
+  }
 ]
 
 const router = createRouter({

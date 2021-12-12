@@ -1,6 +1,6 @@
-<script setup>
-import Simple from './Simple.html?raw'
-import WithSearch from './WithSearch.html?raw'
+<script setup lang="ts">
+import Simple from '@/eulercss/docs/Navbar/Simple.html?raw'
+import WithSearch from '@/eulercss/docs/Navbar/WithSearch.html?raw'
 </script>
 
 <template>

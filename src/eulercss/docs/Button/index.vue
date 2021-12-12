@@ -1,10 +1,10 @@
-<script setup>
-import Primary from '@/docs/Button/Primary.html?raw'
-import WithIcon from '@/docs/Button/WithIcon.html?raw'
-import Outlined from '@/docs/Button/Outlined.html?raw'
-import Disabled from '@/docs/Button/Disabled.html?raw'
-import Ring from '@/docs/Button/Ring.html?raw'
-import FullWidth from '@/docs/Button/FullWidth.html?raw'
+<script setup lang="ts">
+import Primary from '@/eulercss/docs/Button/Primary.html?raw'
+import WithIcon from '@/eulercss/docs/Button/WithIcon.html?raw'
+import Outlined from '@/eulercss/docs/Button/Outlined.html?raw'
+import Disabled from '@/eulercss/docs/Button/Disabled.html?raw'
+import Ring from '@/eulercss/docs/Button/Ring.html?raw'
+import FullWidth from '@/eulercss/docs/Button/FullWidth.html?raw'
 </script>
 
 <template>

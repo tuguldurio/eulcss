@@ -1,9 +1,9 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: 'jit',
-  purge: ['./public/**/*.html', './src/**/*.{js,vue,html}'],
-  darkMode: 'class', // or 'media' or 'class'
+  // mode: 'jit',
+  content: ['./public/**/*.html', './src/**/*.{js,vue,html}'],
+  darkMode: 'class',
   theme: {
     extend: {
       container: {
@@ -50,10 +50,7 @@ module.exports = {
           '700': '#1b1b1b',
           '800': '#181818',
           '900': '#0f0f0f',
-        },
-        'true-gray': colors.trueGray,
-        lime: colors.lime,
-        emerald: colors.emerald,
+        }
       }
     },
   },

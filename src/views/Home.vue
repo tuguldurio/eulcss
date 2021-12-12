@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import useInfo from '@/hooks/useInfo'
+const { title } = useInfo()
+</script>
+
 <template>
   <div>
     <div class="container mx-auto h-screen-real flex justify-between">
@@ -8,7 +13,7 @@
 
           <div class="flex items-center justify-center space-x-2 mt-4">
             <router-link :to="{ name: 'Button' }">
-              <button class="w-full px-4 py-2 text-sm md:text-lg font-medium text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:bg-blue-500 rounded-md transition-colors duration-200">Get Started</button>
+              <button class="w-full px-4 py-2 text-sm md:text-lg font-medium text-white bg-sky-500 hover:bg-sky-600 focus:outline-none rounded-md transition-colors duration-200">Get Started</button>
             </router-link>
 
             <a href="https://github.com/tuguldurio/eulcss" target="_blank">
@@ -24,11 +29,3 @@
     <Footer/>
   </div>
 </template>
-
-<script setup>
-import { useRouter } from 'vue-router'
-import useInfo from '@/hooks/useInfo'
-
-const router = useRouter()
-const { title } = useInfo()
-</script>

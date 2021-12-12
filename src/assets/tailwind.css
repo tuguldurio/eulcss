@@ -9,7 +9,7 @@
   .text-color {
     @apply text-dark-800 dark:text-light-200;
   }
-  .subtitle-color {
+  .title-color {
     @apply text-dark-800 dark:text-light-200;
   }
 }
