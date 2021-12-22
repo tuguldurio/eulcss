@@ -30,7 +30,7 @@ const { copy, copied } = useHighlighter(codeEl, props.code)
 <template>
   <div class="w-full border border-color rounded overflow-hidden">
     <!-- Header -->
-    <preview-header
+    <PreviewHeader
       :title="props.title"
       @toggleCode="toggleCode"
       @copy="copy"
@@ -40,7 +40,7 @@ const { copy, copied } = useHighlighter(codeEl, props.code)
     <!-- Preview -->
     <div 
       class="relative flex"
-      :class="[props.bgGray ? 'bg-light-400 dark:bg-dark-400' : 'bg-white dark:bg-dark-600']"
+      :class="[props.bgGray ? 'bg-light-400 dark:bg-dark-400' : 'bg-white dark:bg-zinc-900']"
     >
       <div 
         v-html="code"

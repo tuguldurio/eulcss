@@ -26,6 +26,7 @@ const { title } = useInfo()
         </div>
       </div>
     </div>
+    
     <Footer/>
   </div>
 </template>

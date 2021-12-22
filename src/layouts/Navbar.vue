@@ -1,31 +1,13 @@
 <script setup lang="ts">
-import { watch } from 'vue'
-import { useDark, useToggle } from '@vueuse/core'
 import useInfo from '@/hooks/useInfo'
+import useDark from '@/hooks/isDark'
 
 const { title } = useInfo()
-
-const isDark = useDark()
-const toggleDark = useToggle(isDark)
-
-function lookupCodeLink() {
-  if (isDark.value) {
-    document.querySelector('link[title=codeDark]')?.removeAttribute('disabled')
-    document.querySelector('link[title=codeLight]')?.setAttribute('disabled', 'disabled')
-  } else {
-    document.querySelector('link[title=codeLight]')?.removeAttribute('disabled')
-    document.querySelector('link[title=codeDark]')?.setAttribute('disabled', 'disabled')
-  }
-}
-
-lookupCodeLink()
-watch(isDark, () => {
-  lookupCodeLink()
-})
+const { isDark, toggleDark } = useDark()
 </script>
 
 <template>
-  <header class="fixed top-0 w-full h-header z-50 py-2 bg-white dark:bg-dark-600 border-b border-color transition"
+  <header class="fixed top-0 w-full h-header z-50 py-2 bg-white dark:bg-zinc-900 border-b border-color transition"
   >
     <div class="container w-full h-full flex items-center mx-auto">
       <div class="w-full flex items-center justify-between">

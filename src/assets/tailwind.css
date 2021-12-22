@@ -4,7 +4,7 @@
 
 @layer utilities {
   .border-color {
-    @apply border-light-500 dark:border-dark-300;
+    @apply border-neutral-100 dark:border-neutral-800;
   }
   .text-color {
     @apply text-dark-800 dark:text-light-200;

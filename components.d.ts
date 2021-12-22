@@ -5,7 +5,8 @@
 declare module 'vue' {
   export interface GlobalComponents {
     Circle: typeof import('./src/docs/Progress/Circle.vue')['default']
-    DocsContainer: typeof import('./src/components/DocsContainer.vue')['default']
+    DocsContainer: typeof import('./src/components/Documentation/DocsContainer.vue')['default']
+    DocsContainerASDSADAS: typeof import('./src/components/DocsContainerASDSADAS.vue')['default']
     DocsListItem: typeof import('./src/components/DocsListItem.vue')['default']
     DocsListItemA: typeof import('./src/components/DocsListItemA.vue')['default']
     Footer: typeof import('./src/layouts/Footer.vue')['default']

@@ -1,10 +1,12 @@
 import { watch, Ref } from 'vue'
 import { useClipboard } from '@vueuse/core'
 
-import hljs from 'highlight.js'
-// import hljs from 'highlight.js/lib/core'
-// import html from 'highlight.js/lib/languages/vbscript-html'
-// hljs.registerLanguage('html', html)
+// import hljs from 'highlight.js'
+import hljs from 'highlight.js/lib/core'
+import html from 'highlight.js/lib/languages/xml'
+hljs.registerLanguage('html', html)
+
+// import 'highlight.js/styles/atom-one-dark.css'
 
 export function useHighlighter(codeEl: Ref, input: string) {
   const { copy, copied } = useClipboard({
