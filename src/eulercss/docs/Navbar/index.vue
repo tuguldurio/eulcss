@@ -5,7 +5,7 @@ import WithSearch from '@/eulercss/docs/Navbar/WithSearch.html?raw'
 
 <template>
   <DocsContainer>
-    <SimplePreview title="Simple" :code="Simple" bgGray :paddingX="false"/>
-    <SimplePreview title="With Search" :code="WithSearch" bgGray :paddingX="false"/>
+    <SimplePreview title="Simple" :code="Simple" :paddingX="false"/>
+    <SimplePreview title="With Search" :code="WithSearch" :paddingX="false"/>
   </DocsContainer>
 </template>

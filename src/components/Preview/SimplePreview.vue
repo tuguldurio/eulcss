@@ -8,14 +8,12 @@ interface Props {
   title: string
   code: string,
   paddingX?: boolean,
-  paddingY?: boolean,
-  bgGray?: boolean
+  paddingY?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   paddingX: true,
-  paddingY: true,
-  bgGray: false
+  paddingY: true
 })
 
 // code
@@ -38,10 +36,7 @@ const { copy, copied } = useHighlighter(codeEl, props.code)
     />
 
     <!-- Preview -->
-    <div 
-      class="relative flex"
-      :class="[props.bgGray ? 'bg-light-400 dark:bg-dark-400' : 'bg-white dark:bg-zinc-900']"
-    >
+    <div class="relative flex bg-white dark:bg-zinc-900">
       <div 
         v-html="code"
         class="relative flex-1 flex items-center justify-center"

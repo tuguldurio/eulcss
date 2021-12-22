@@ -6,6 +6,6 @@ import FullWidth from '@/eulercss/docs/Breadcrumbs/FullWidth.html?raw'
 <template>
   <DocsContainer>
     <SimplePreview title="Simple" :code="Simple"/>
-    <SimplePreview title="Full Width" :code="FullWidth" bgGray :paddingX="false"/>
+    <SimplePreview title="Full Width" :code="FullWidth" :paddingX="false"/>
   </DocsContainer>
 </template>
