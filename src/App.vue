@@ -30,8 +30,8 @@ watch(isDark, () => {
   <div class="h-full min-h-screen pt-12 text-color dark:bg-zinc-900 transition-colors">
     <Navbar/>
     <router-view/>
-    <link ref="codeStyleDark"  rel="stylesheet" disabled href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/onedark.min.css">
-    <link ref="codeStyleLight" rel="stylesheet" disabled href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/one-light.min.css">
+    <link ref="codeStyleDark"  rel="stylesheet" disabled href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+    <link ref="codeStyleLight" rel="stylesheet" disabled href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-light.min.css">
   </div>
 </template>
 
