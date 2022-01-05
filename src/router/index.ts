@@ -10,13 +10,13 @@ function prefixRoutes(prefix: string, routes: Array<RouteRecordRaw>): Array<Rout
   })
 }
 
-function getDocs(): Array<RouteRecordRaw> {
-  const docsNames = useDocsNames()
+function getComponents(): Array<RouteRecordRaw> {
+  const componentsNames = useDocsNames()
 
-  return docsNames.map(name => <RouteRecordRaw>{
+  return componentsNames.map(name => <RouteRecordRaw>{
     path: name.toLocaleLowerCase(),
     name: name,
-    component: () => import(`../eulercss/docs/${name}/index.vue`)
+    component: () => import(`../eulercss/components/${name}/index.vue`)
   })
 }
 
@@ -46,7 +46,7 @@ const routes: Array<RouteRecordRaw> = [
           component: () => import('../eulercss/tools/RemConverter/index.vue')
         }
       ]),
-      ...prefixRoutes('/docs', getDocs()),
+      ...prefixRoutes('/components', getComponents()),
     ]
   }
 ]

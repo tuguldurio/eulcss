@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useToggle } from '@vueuse/core'
 import { useHighlighter } from '@/hooks/useHighlighter'
 import { escapeHtml } from '@/utils'
+import { useDocument } from '@/hooks/preview'
 
 interface Props {
   title: string
@@ -16,13 +17,37 @@ const props = withDefaults(defineProps<Props>(), {
   paddingY: true
 })
 
-// code
 const escapedCode = escapeHtml(props.code)
 
-const codeEl = ref()
+// syntax highlighting
+const codeEl = ref<HTMLElement | null>(null)
+const { copy, copied } = useHighlighter(codeEl, props.code)
+
+// dark mode for iframe
+const [isDark, toggleDark] = useToggle(false)
+
+// formatting for the iframe srcdoc
+const { document } = useDocument(props.code, props.paddingX, props.paddingY, isDark)
+
+// toggler for previewing code
 const [showCode, toggleCode] = useToggle(false)
 
-const { copy, copied } = useHighlighter(codeEl, props.code)
+// TODO: resizing
+// iframe width
+// const frameWidth = ref<number>()
+
+// const resizeEl = ref<HTMLElement | null>(null)
+
+// const { x: dragX } = useDraggable(resizeEl)
+
+// onMounted(() => {
+//   frameWidth.value = resizeEl.value!.parentElement!.getBoundingClientRect().width
+// })
+
+// watch(dragX, () => {
+//   const rect = resizeEl.value!.parentElement!.getBoundingClientRect()
+//   frameWidth.value = dragX.value - rect.left + resizeEl.value!.clientWidth
+// })
 </script>
 
 <template>
@@ -33,15 +58,15 @@ const { copy, copied } = useHighlighter(codeEl, props.code)
       @toggleCode="toggleCode"
       @copy="copy"
       :copied="copied"
+      :isDark="isDark"
+      @toggleDark="toggleDark"
     />
 
     <!-- Preview -->
-    <div class="relative flex bg-white dark:bg-zinc-900">
-      <div 
-        v-html="code"
-        class="relative flex-1 flex items-center justify-center"
-        :class="{ 'px-4': props.paddingX, 'py-4': props.paddingY }"
-      ></div>
+    <div class="relative bg-white dark:bg-zinc-900">
+      <div class="max-w-full flex">
+        <iframe :title="props.title" class="w-full" :srcdoc="document" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));'/>
+      </div>
     </div>
 
     <!-- Code -->
@@ -52,6 +77,12 @@ const { copy, copied } = useHighlighter(codeEl, props.code)
 </template>
 
 <style scoped>
+iframe {
+  min-width: 360px;
+  resize: horizontal;
+  overflow: auto;
+}
+
 ::-webkit-scrollbar {
   width: 20px;
 }
