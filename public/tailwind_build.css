@@ -1290,6 +1290,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(56 189 248 / var(--tw-text-opacity));
 }
 
+.dark .dark\:text-neutral-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 229 229 / var(--tw-text-opacity));
+}
+
 .dark .dark\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
