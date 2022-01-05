@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory, RouteRecordRaw, NavigationGuard, RouterView } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 
-import { useDocsNames } from '~/src/hooks/Docs'
+import { docsNames } from '~/src/utils'
 
 function prefixRoutes(prefix: string, routes: Array<RouteRecordRaw>): Array<RouteRecordRaw> {
   return routes.map(route => {
@@ -11,7 +11,7 @@ function prefixRoutes(prefix: string, routes: Array<RouteRecordRaw>): Array<Rout
 }
 
 function getComponents(): Array<RouteRecordRaw> {
-  const componentsNames = useDocsNames()
+  const componentsNames = docsNames
 
   return componentsNames.map(name => <RouteRecordRaw>{
     path: name.toLocaleLowerCase(),

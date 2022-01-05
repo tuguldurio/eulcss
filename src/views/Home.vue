@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import useInfo from '@/hooks/useInfo'
-const { title } = useInfo()
+import info from '~/src/utils/info'
+const { title } = info()
 </script>
 
 <template>

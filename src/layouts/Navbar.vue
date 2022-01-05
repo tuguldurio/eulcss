@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import useInfo from '@/hooks/useInfo'
+import info from '~/src/utils/info'
 import useDark from '@/hooks/isDark'
 
-const { title } = useInfo()
+const { title } = info()
 const { isDark, toggleDark } = useDark()
 </script>
 

@@ -1,7 +1,7 @@
-import { ref, watch, Ref } from 'vue'
+import { ref, watchEffect, Ref } from 'vue'
 
 export function useDocument(code: string, paddingX: boolean, paddingY: boolean, isDark: Ref<boolean>) {
-  let document = ref(`<!doctype html>
+  const lightDoc = `<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -11,34 +11,26 @@ export function useDocument(code: string, paddingX: boolean, paddingY: boolean, 
   <body class="relative flex-1 flex items-center justify-center ${paddingX ? 'px-4 ' : ''}${paddingY ? 'py-4' : ''}">
     ${code}
   </body>
-</html>`)
-
-  watch(isDark, () => {
-    
-    if (isDark.value) {
-      document.value = `<!doctype html>
+</html>`
+  const darkDoc = `<!doctype html>
 <html class="dark">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/tailwind_build.css" rel="stylesheet">
   </head>
-  <body class="relative flex-1 flex items-center justify-center ${paddingX ? 'px-4 ' : ''}${paddingY ? 'py-4' : ''}">
+  <body class="relative flex-1 flex items-center justify-center bg-gray-800 ${paddingX ? 'px-4 ' : ''}${paddingY ? 'py-4' : ''}">
     ${code}
   </body>
 </html>`
+  
+  let document = ref<string>()
+
+  watchEffect(() => {
+    if (isDark.value) {
+      document.value = darkDoc
     } else {
-      document.value = `<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/tailwind_build.css" rel="stylesheet">
-  </head>
-  <body class="relative flex-1 flex items-center justify-center ${paddingX ? 'px-4 ' : ''}${paddingY ? 'py-4' : ''}">
-    ${code}
-  </body>
-</html>`
+      document.value = lightDoc
     }
   })
 

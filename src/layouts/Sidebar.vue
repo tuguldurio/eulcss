@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { useDocsNames } from '~/src/hooks/Docs'
-const docsNames = useDocsNames()
+import { docsNames } from '@/utils'
 </script>
 
 <template>

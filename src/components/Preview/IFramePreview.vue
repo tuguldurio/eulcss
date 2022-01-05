@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useToggle } from '@vueuse/core'
 import { useHighlighter } from '@/hooks/useHighlighter'
-import { escapeHtml } from '@/utils'
+import { escapeHtml } from '@/utils/escapeHtml'
 import { useDocument } from '@/hooks/preview'
 
 interface Props {
@@ -63,7 +63,7 @@ const [showCode, toggleCode] = useToggle(false)
     />
 
     <!-- Preview -->
-    <div class="relative bg-white dark:bg-zinc-900">
+    <div class="relative ">
       <div class="max-w-full flex">
         <iframe :title="props.title" class="w-full" :srcdoc="document" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));'/>
       </div>

@@ -1,1 +1,1 @@
-export { escapeHtml } from './escapeHtml'
+export const docsNames: Array<string> = ['Breadcrumbs', 'Button', 'Alert', 'Progress', 'Navbar', 'Pagination']
