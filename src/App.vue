@@ -1,28 +1,20 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue'
+import { ref, watchEffect } from 'vue'
 import useDark from '@/hooks/isDark'
 
 const { isDark } = useDark()
 
-const codeStyleLight = ref()
-const codeStyleDark = ref()
+const codeStyleLight = ref<HTMLLinkElement>()
+const codeStyleDark = ref<HTMLLinkElement>()
 
-function lookupCodePreview() {
+watchEffect(() => {
   if (isDark.value) {
-    codeStyleDark.value.removeAttribute('disabled')
-    codeStyleLight.value.setAttribute('disabled', 'disabled')
+    codeStyleDark.value?.removeAttribute('disabled')
+    codeStyleLight.value?.setAttribute('disabled', 'disabled')
   } else {
-    codeStyleLight.value.removeAttribute('disabled')
-    codeStyleDark.value.setAttribute('disabled', 'disabled')
+    codeStyleLight.value?.removeAttribute('disabled')
+    codeStyleDark.value?.setAttribute('disabled', 'disabled')
   }
-}
-
-onMounted(() => {
-  lookupCodePreview()
-})
-
-watch(isDark, () => {
-  lookupCodePreview()
 })
 </script>
 
