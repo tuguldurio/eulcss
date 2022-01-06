@@ -4,6 +4,7 @@ import { useToggle } from '@vueuse/core'
 import { useHighlighter } from '@/hooks/useHighlighter'
 import { escapeHtml } from '@/utils/escapeHtml'
 import { useDocument } from '@/hooks/preview'
+import useDark from '@/hooks/isDark'
 
 interface Props {
   title: string
@@ -24,7 +25,8 @@ const codeEl = ref<HTMLElement | null>(null)
 const { copy, copied } = useHighlighter(codeEl, props.code)
 
 // dark mode for iframe
-const [isDark, toggleDark] = useToggle(false)
+const { isDark: globalDark } = useDark()
+const [isDark, toggleDark] = useToggle(globalDark.value)
 
 // formatting for the iframe srcdoc
 const { document } = useDocument(props.code, props.paddingX, props.paddingY, isDark)
