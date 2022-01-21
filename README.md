@@ -4,7 +4,7 @@
   <img src="./public/icon.png" alt="Logo" width="120" height="120"/>
 </p>
 
-Free components and templates for Tailwind CSS 🌀
+Free and open source sleek components and templates for Tailwind CSS 🌀
 
 ## License
 
