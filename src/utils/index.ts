@@ -1,1 +1,9 @@
-export const docsNames: Array<string> = ['Breadcrumbs', 'Button', 'Alert', 'Progress', 'Navbar', 'Pagination']
+export const docsNames: Array<string> = [
+  'Alert',
+  'Breadcrumb',
+  'Button',
+  'Card',
+  'Navbar',
+  'Progress',
+  'Pagination'
+]

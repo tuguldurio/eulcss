@@ -1,17 +1,17 @@
 {
   "name": "eulercss",
   "title": "EulerCSS",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"vite\" \"npx tailwindcss -i ./src/assets/tailwind.css -o ./public/tailwind_build.css --watch\"",
     "build": "npx tailwindcss -i ./src/assets/tailwind.css -o ./public/tailwind_build.css && vue-tsc --noEmit && vite build",
-    "serve": "vite preview",
-    "build-tailwind": "npx tailwindcss -i ./src/assets/tailwind.css -o ./public/tailwind_build.css --watch"
+    "serve": "vite preview"
   },
   "dependencies": {
     "@headlessui/vue": "^1.4.2",
     "@vueuse/core": "^7.2.2",
+    "concurrently": "^7.0.0",
     "highlight.js": "^11.3.1",
     "vue": "^3.2.26",
     "vue-router": "^4.0.12"
